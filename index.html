@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <div class="container mt-3">
+    <form action="/action.php">
+
+      <div class="form-group row">
+        <label class="form-control-label mt-2 col-2" for="inputName">Imię:</label>
+        <input type="text" class="col-10 form-control" id="inputName" placeholder="Podaj imię">
+        <div class="form-control-feedback hidden-xs-up offset-2 col-10">Znów się udało!</div>
+        <small class="form-text text-muted offset-2 col-10">Podaj imię/imiona (maksymalnie dwa, nie jesteśmy psychopatami).</small>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputSurname" class="form-control-label mt-2 col-2">Nazwisko:</label>
+        <input type="text" class="col-10 form-control" id="inputSurname" placeholder="Podaj nazwisko">
+        <div class="form-control-feedback hidden-xs-up offset-2 col-10">Znów się udało!</div>
+        <small id="helpSName" class="col-10 offset-2 text-muted form-text">Podaj nazwisko. Podwójne nazwiska oddziel myślnikiem.</small>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputEmail" class="form-control-label mt-2 col-2">Adres email:</label>
+        <input type="text" class="col-10 form-control" id="inputEmail" placeholder="Podaj email">
+        <div class="form-control-feedback hidden-xs-up offset-2 col-10">Znów się udało!</div>
+        <small id="emailHelp" class="form-text text-muted col-10 offset-2">Nie wygłupiaj się, wpisz poprawny adres email.</small>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputPass" class="form-control-label mt-2 col-2">Hasło</label>
+        <input type="password" class="col-10 form-control" id="inputPass">
+        <div class="form-control-feedback hidden-xs-up offset-2 col-10">Znów się udało!</div>
+        <small id="passHelp" class="form-text col-10 offset-2 text-muted">Wpisz hasło. Conajmniej 8 znaków, conajmniej jedna duża, jedna mała litera, liczba oraz znak specjalny.</small>
+      </div>
+
+      <div class="form-group row">
+        <label for="secondPass" class="form-control-label mt-2 col-2">Powtórz hasło</label>
+        <input type="password" class="col-10 form-control" id="secondPass">
+        <div class="form-control-feedback hidden-xs-up offset-2 col-10">Znów się udało!</div>
+        <small id="secondPassHelp" class="col-10 offset-2 form-text text-muted">Powtórz hasło</small>
+      </div>
+
+      <div class="form-group row">
+        <label for="birthDate" class="form-control-label mt-2 col-2">Wpisz datę</label>
+        <input type="text" id="birthDate" class="col-10 form-control" placeholder="RRRR/MM/DD">
+        <div class="form-control-feedback hidden-xs-up offset-2 col-10">Znów się udało!</div>
+        <small id="helpBirth" class="text-muted form-text offset-2 col-10">Wpisz datę urodzin. Poprawna kolejność to rok, miesiąc, dzień</small>
+      </div>
+
+      <div class="form-group row">
+        <label for="PESEL" class="form-control-label mt-2 col-2">Wpisz datę</label>
+        <input type="text" id="PESEL" class="col-10 form-control" placeholder="PESEL">
+        <div class="form-control-feedback hidden-xs-up offset-2 col-10">Znów się udało!</div>
+        <small id="helpPESEL" class="text-muted form-text offset-2 col-10">Wpisz PESEL. Uwaga, jestem mądrzejszy niż wyglądam!</small>
+      </div>
+
+      <div class="form-group row">
+        <button type="submit" id="submitButton" class="offset-2 btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

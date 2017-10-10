@@ -1,0 +1,25 @@
+{
+  "name": "formvalidate",
+  "version": "1.0.0",
+  "description": "small project to validate form. ",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pkochanek@bitbucket.org/pkochanek/formvalidate.git"
+  },
+  "author": "Paweł Kochanek",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/pkochanek/formvalidate#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "sass-lint": "^1.12.0"
+  }
+}
