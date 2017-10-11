@@ -17,28 +17,20 @@ var regexArr = [
 
 function submitMe(event) {
   var inputTag = document.getElementsByTagName("input");
-  var formGroupClass = document.getElementsByClassName("form-group");
   var errorArr = [];
 
   //this loop checks if all regex are correct. It doesn't check other stuff, like birth date or PESEL
   for (var i = 0; i < regexArr.length; i++) {
     event.preventDefault();
     if (regexArr[i].test(inputTag[i].value)) {
-      formGroupClass[i].classList.add("has-success");
-      formGroupClass[i].classList.remove("has-danger");
-      inputTag[i].classList.add("form-control-success");
-      inputTag[i].classList.remove("form-control-danger");
+      //function to change colors
+      changeColors(i, true);
       errorArr[i] = 0;
     } else {
-      formGroupClass[i].classList.remove("has-success");
-      formGroupClass[i].classList.add("has-danger");
-      inputTag[i].classList.remove("form-control-success");
-      inputTag[i].classList.add("form-control-danger");
+      changeColors(i, false);
       errorArr[i] = 1;
-      event.preventDefault();
     }
   }
-
   //if there are no errors in all regex, this happens
   if (!checkErrors(errorArr)) {
 
@@ -50,6 +42,25 @@ function submitMe(event) {
   }
 }
 
+
+//function to change colors of valid/invalid inputs
+function changeColors(x, bool) {
+  var inputTag = document.getElementsByTagName("input");
+  var formGroupClass = document.getElementsByClassName("form-group");
+  if (bool) {
+    formGroupClass[x].classList.add("has-success");
+    formGroupClass[x].classList.remove("has-danger");
+    inputTag[x].classList.add("form-control-success");
+    inputTag[x].classList.remove("form-control-danger");
+  } else {
+    formGroupClass[x].classList.remove("has-success");
+    formGroupClass[x].classList.add("has-danger");
+    inputTag[x].classList.remove("form-control-success");
+    inputTag[x].classList.add("form-control-danger");
+  }
+}
+
+//check if birthDay is set correctly. You mustn't be older than 130 years, younger than 18. Also month and day should exist
 function checkBirthDate(birthDate) {
 
   //I split input into YYYY MM DD
@@ -59,7 +70,7 @@ function checkBirthDate(birthDate) {
   var thisDate = new Date();
 
   //array for keeping days in month
-  var daysArr = [31,28,31,30,31,30,31,31,30,31,30,31];
+  var daysArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
   //error handler
   var errorPass = 0;
@@ -80,7 +91,7 @@ function checkBirthDate(birthDate) {
     errorPass = 1;
     document.getElementById("errorBirthDate").innerText = "Nie ma takiego miesiąca!";
   }
-  
+
   //check if user is not too old/young
   if (((thisDate.getFullYear() - birthArr[0]) > 130) || (thisDate.getFullYear() - birthArr[0]) < 18) {
     errorPass = 1;
@@ -90,29 +101,23 @@ function checkBirthDate(birthDate) {
       document.getElementById("errorBirthDate").innerText = "Nie możesz być starszy niż 130 lat, ani młodszy niż 18!";
     }
   }
-  
+
   //show error text
   if (errorPass !== 0) {
     document.getElementById("errorScreen").classList.remove("hide-content");
     document.getElementById("errorBirthDate").classList.remove("hidden-xs-up");
-    document.getElementsByClassName("form-group")[5].classList.toggle("has-success");
-    document.getElementsByClassName("form-group")[5].classList.toggle("has-danger");
-    document.getElementsByTagName("input")[5].classList.remove("form-control-success");
-    document.getElementsByTagName("input")[5].classList.add("form-control-danger");
+    changeColors(5, false);
   }
 }
 
 //checks if passwords are the same. If not, it make input red and show the comment for error in popup.
 function checkPassword(pass, spass) {
   if (pass !== spass) {
-    
+
     //this part show error message and colors the input
     document.getElementById("errorScreen").classList.remove("hide-content");
     document.getElementById("errorPassTest").classList.remove("hidden-xs-up");
-    document.getElementsByClassName("form-group")[4].classList.toggle("has-success");
-    document.getElementsByClassName("form-group")[4].classList.toggle("has-danger");
-    document.getElementsByTagName("input")[4].classList.remove("form-control-success");
-    document.getElementsByTagName("input")[4].classList.add("form-control-danger");
+    changeColors(4, false);
   }
 }
 
