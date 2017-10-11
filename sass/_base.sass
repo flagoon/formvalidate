@@ -1,4 +1,26 @@
-html 
+$fixed-background: rgba(0, 44, 44, .3)
+
+
+html
+  box-sizing: border-box
   margin: 0
   padding: 0
-  box-sizing: border-box
+
+.full-screen
+  background-color: $fixed-background
+  height: 100%
+  width: 100%
+  position: fixed
+  top: 0
+  z-index: 99
+
+.overlap
+  background-color: #333
+  border-radius: 14px
+  color: #ccc
+  margin-left: 50%
+  padding: 25px
+  position: fixed
+  top: 200px
+  transform: translateX(-50%)
+  z-index: 100

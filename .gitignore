@@ -1,1 +1,7 @@
 node_modules/
+.eslintrc.json
+super-zadanie/
+.gitignore
+gulpfile.js
+package-lock.json
+package.json
