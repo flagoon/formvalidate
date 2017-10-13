@@ -15,7 +15,15 @@ var regexArr = [
   /^\d{11}$/
 ];
 
+function hideMe() {
+  var hider = document.getElementsByClassName("pointers");
+  for (let i = 0; i < hider.length; i++) {
+    hider[i].classList.add("hidden-xs-up");
+  }
+}
+
 function submitMe(event) {
+  hideMe();
   var inputTag = document.getElementsByTagName("input");
   var errorArr = [];
 
@@ -50,6 +58,14 @@ function submitMe(event) {
   }
 }
 
+function changeString(a) {
+  if (a < 10) {
+    return "0" + a.toString();
+  } else {
+    return a;
+  }
+}
+
 function checkPESEL(birth, pesel) {
   var monthIncrease = 0;
   pesel = pesel.slice(0, 6);
@@ -58,8 +74,12 @@ function checkPESEL(birth, pesel) {
     monthIncrease = 80;
   } else if (Number(newArr[0]) > 1999) {
     monthIncrease = 20;
+  } else {
+    monthIncrease = 0;
   }
-  var testBirth = newArr[0].slice(2) + (Number(newArr[1]) + monthIncrease) + newArr[2];
+  var monthString = Number(newArr[1]) + monthIncrease;
+  var testBirth = newArr[0].slice(2) + changeString(monthString) + newArr[2];
+  console.log(testBirth);
   if (!(testBirth === pesel)) {
     document.getElementById("errorScreen").classList.remove("hide-content");
     document.getElementById("errorPESEL").classList.remove("hidden-xs-up");
